@@ -1,0 +1,11 @@
+<% if @tab_text %>
+
+  <%= @tab_text.html_safe %>
+
+<% end %>
+
+<script>
+    urlparams = new URLSearchParams(document.location.search);
+    tab = urlparams.get("tab");
+    document.getElementsByClassName(tab)[0].className += " selected"
+</script>
