@@ -5,7 +5,15 @@
 <% end %>
 
 <script>
-    urlparams = new URLSearchParams(document.location.search);
-    tab = urlparams.get("tab");
-    document.getElementsByClassName(tab)[0].className += " selected"
+  var project = <%= @project.id %>;
+  var tab = "<%= @tab %>";
+
+  var frame = document.getElementById("customtabs");
+  var frame_url = frame.getAttribute("data-src");
+
+  frame_url = frame_url += "?id=" + project;
+  frame.src = frame_url;
+
+  document.getElementsByClassName(tab)[0].className += " selected"
+
 </script>

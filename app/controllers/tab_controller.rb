@@ -9,6 +9,7 @@ class TabController < ApplicationController
   def show
     tabs = YAML.load(Setting.plugin_redmine_custom_tabs['tab_yml'])
     @tab_text = tabs[params[:tab]]['framesrc']
+    @tab = params[:tab]
   end
 
   private
